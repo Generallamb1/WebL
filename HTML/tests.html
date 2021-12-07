@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <LINK REL=STYLESHEET TYPE="text/css" HREF="NavMenu.css">
+    <title>Тест</title>
+</head>
+
+<body>
+    <header>
+        <h1>Тест по Основам экологии</h1>
+    </header>
+    <main>
+        <form>
+            <p><b>Ваше ФИО:</b><br>
+                <input type="text" name="FIO" size="40">
+            </p>
+
+            <p><b>Выбор группы по курсу:</b><br>
+                <select size="5" name="group">
+                    <optgroup label="1 курс">
+                        <option value="1.11">ИС-1</option>
+                        <option value="1.12">ИС-2</option>
+                        <option value="1.13">ИС-3</option>
+                    </optgroup>
+                    <optgroup label="2 курс">
+                        <option value="1.21">ИС-1</option>
+                        <option value="1.22">ИС-2</option>
+                        <option value="1.23">ИС-3</option>
+                    </optgroup>
+                    <optgroup label="3 курс">
+                        <option value="1.31">ИС-1</option>
+                        <option value="1.32">ИС-2</option>
+                        <option value="1.33">ИС-3</option>
+                    </optgroup>
+                    <optgroup label="4 курс">
+                        <option value="1.41">ИС-1</option>
+                        <option value="1.42">ИС-2</option>
+                        <option value="1.43">ИС-3</option>
+                    </optgroup>
+                </select>
+            <p>
+            <h3>Тестовая часть</h3>
+            </p>
+            </p>
+
+            <p><b>Выберите техногенную угрозу:</b><br>
+            <select>
+                <optgroup label = "Угроза">
+                    <option value="c1">Оползень</option>
+                    <option value="c2">Взрыв АЭС</option>
+                    <option value="c3">Сход лавины</option>
+                    <option value="c4">Цунами</option>
+                    <option value="c5">Извержение вулкана</option>
+                    <option value="c6">Землетрясение</option>
+
+                </optgroup>
+            </select>
+
+            <p><b>Выберете верные суждения:</b><br>
+                <input class="testCheckbox" type="checkbox" name="checkbox" value="1"> Эколо́гия - наука о взаимодействии живых организмов между собой <br>
+                <input class="testCheckbox" type="checkbox" name="checkbox" value="2"> Термин "Экология" был введён в 1866 году <br>
+                <input class="testCheckbox" type="checkbox" name="checkbox" value="3"> Экология - это продажа телефонов без зарядных устройств
+
+            </p>
+
+            <p><b>Введите изучением чего занимается Синэкология</b></p>
+            <input type="text" name="FIO" size="">
+
+            <p><input type="submit" value="Отправить">
+                <input type="reset" value="Очистить">
+            </p>
+        </form>
+    </main>
+    <nav>
+        <a href="Main.html">На главную</a>
+    </nav>
+    <script src = "JS/testChecker.js"></script>
+</body>
+
+</html>

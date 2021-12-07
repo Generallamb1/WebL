@@ -1,0 +1,19 @@
+body {
+    background-color:whitesmoke;
+}
+ul.nav {
+    background-color:wheat;
+    color:darkorange;
+    display:flex; 
+    justify-content: center;
+    padding: 20px;
+}
+ul.nav li {
+    list-style-type: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+ul.nav li a {
+    text-decoration: none;
+    color:black;
+}

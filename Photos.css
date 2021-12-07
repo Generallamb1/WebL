@@ -1,0 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+.gallery {
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.gallery > * {
+    flex-basis: 20%;
+    padding: 10px;
+}
