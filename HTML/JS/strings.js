@@ -39,7 +39,7 @@ textList =
 printOut(...textList);
 
 
-function printOut()
+function printOut(){
 
     var container = document.getElementById('container');
     var my_html = ' ';
