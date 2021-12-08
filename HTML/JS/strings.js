@@ -36,20 +36,20 @@ textList =
 ]
 
 
-printOut(textList);
+printOut(...textList);
 
 
-function printOut(textList)
-{
+function printOut()
+
     var container = document.getElementById('container');
     var my_html = ' ';
 
 
-    for (var i = 0; i < textList.length; i++)
+    for (var i = 0; i < arguments.length; i++)
     {
-        my_html += '<' + textList[i].style + '>';
-        my_html += textList[i].text;
-        my_html += '</' + textList[i].style + '>';
+        my_html += '<' + arguments[i].style + '>';
+        my_html += arguments[i].text;
+        my_html += '</' + arguments[i].style + '>';
     }
 
     container.innerHTML = my_html;

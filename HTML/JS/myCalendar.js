@@ -17,7 +17,7 @@ function calendar()
     
     var dateTime = date + ' ' + time;
 
-    datePlace.innerHTML = dateTime;
+    datePlace.innerText = dateTime;
 
 }
 

@@ -11,6 +11,7 @@ function alertAndFocus(element, errorText)
 {
     alert(errorText);
     document.getElementById(element).focus();
+    document.getElementById(element).style.borderColor = "red";
 }
 
 function checkField()
@@ -74,5 +75,9 @@ function PhoneCheck()
     if (error)
     {
         alertAndFocus('phone', error);
+    }
+    else
+    {
+        
     }
 }
