@@ -12,6 +12,8 @@
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
 
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
         <meta charset="utf-8">
 
         <title> Строничка </title>
@@ -24,22 +26,35 @@
             Главная страница
         </header>
 
-        <div class = "navbar">
-        <nav>
-            <a href="Contact.html">Контакт</a>
+        <nav class = "navbar">
+            
+            <a class="fas fa-address-card" href="Contact.html">Контакт</a>
             <a href="tests.html">Тест по дисциплине</a>
             <a href="Photos.html">Фотоальбом</a>
             <a href="Study.html">Учёба</a>
             <a href="AboutMe.html">Обо мне</a>
-            <ul>
-                <a href="MyInterests.html">Мои интересы</a>
-                <li><a href="MyInterests.html#hobbi"> Мои хобби </a></li>
-                <li><a href="MyInterests.html#music"> Моя любимая музыка </a></li>
-                <li><a href="MyInterests.html#films"> Мои любимые фильмы </a></li>
-                <li><a href="MyInterests.html#books"> Мои любимые книги  </a></li>
-            </ul>
+                
+                <div class="dropdown">
+
+                    <button class="dropbtn">
+
+                        <a href="MyInterests.html">Мои интересы</a>
+                        <i class="fa fa-caret-down"></i>
+
+                    </button>
+                        
+                            <div class ="dropdown-content">
+                                <ul>
+                                    <li><a href="MyInterests.html#hobbi"> Мои хобби </a></li>
+                                    <li><a href="MyInterests.html#music"> Моя любимая музыка </a></li>
+                                    <li><a href="MyInterests.html#films"> Мои любимые фильмы </a></li>
+                                    <li><a href="MyInterests.html#books"> Мои любимые книги  </a></li>
+                                </ul>
+
+                            </div>
+                        
+                </div>
         </nav>
-        </div>
 
 
         <p>
