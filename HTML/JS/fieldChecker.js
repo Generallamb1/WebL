@@ -1,39 +1,74 @@
+let submitButton = document.getElementById('subm');
 
-let button = document.getElementById('subm');
+let phoneField = document.getElementById('phone');
 
-button.addEventListener('click', checkField);
+let fioField = document.getElementById('contact')
 
-button.addEventListener('click', checkFIO);
+let mailField = document.getElementById('mail');
 
-button.addEventListener('click', PhoneCheck);
+submitButton.disabled = true;
 
-function alertAndFocus(element, errorText)
+
+fioField.addEventListener('blur', checkFIO);
+
+phoneField.addEventListener('blur', PhoneCheck);
+
+mailField.addEventListener('blur', MailCheck);
+
+mailField.addEventListener('change', buttonAble);
+
+phoneField.addEventListener('change', buttonAble);
+
+fioField.addEventListener('change', buttonAble);
+
+
+
+
+function alertAndFocus(errorField, element, errorText)
 {
-    alert(errorText);
+    document.getElementById(errorField).innerText = errorText;
     document.getElementById(element).focus();
     document.getElementById(element).style.borderColor = "red";
 }
 
-function checkField()
+function checkEmptyField(id, errorField)
 {
+    error = "Ваше имя не может быть пустым!";
 
-    if (document.getElementById('contact').value == "")
+    if (document.getElementById(id).value == "")
     {
-        alertAndFocus('contact', "Ваше имя не может быть пустым!");
-        return null;
+        alertAndFocus(errorField, id, error);
+        return error;
     }
-
-    if (document.getElementById('mail').value == "")
-        alertAndFocus('mail', "Ваша почта должна быть заполнена!");
-
 }
+
+function MailCheck()
+{
+    error = "";
+
+    error = checkEmptyField('mail', 'mailError');
+
+    if (error)
+    {
+        alertAndFocus('mailError', 'mail', error);
+        return false;
+    }
+    else
+    {
+        document.getElementById('mailError').innerText = "";
+        document.getElementById('mail').style.borderColor = "green";
+        return true;
+    }
+}
+
 
 function checkFIO()
 {
-
+    var error = "";
     var string = document.getElementById('contact').value;
     var counter = 0;
 
+    error = checkEmptyField('contact', 'nameError');
 
     for (let i = 0; i < string.length; i++)
     {
@@ -44,13 +79,30 @@ function checkFIO()
     }
 
     if (string[0] == " " || counter != 2)
-        alertAndFocus('contact', "Данные введены неверно!");
+    {
+        error = "Данные введены неверно!"
+    }
 
+    
+    if (error)
+    {
+        alertAndFocus('nameError', 'contact', error);
+        return false;
+    } else
+    {
+        document.getElementById('nameError').innerText = "";
+        document.getElementById('contact').style.borderColor = "green";     
+        return true;
+    }
 }
 
 function PhoneCheck()
 {
+    var error = "";
+
     var string = document.getElementById('phone').value;
+
+    error = checkEmptyField('phone', 'phoneError');
 
     if (string.match(/^[0-9+]+$/) == null)
     {
@@ -74,10 +126,20 @@ function PhoneCheck()
 
     if (error)
     {
-        alertAndFocus('phone', error);
+        alertAndFocus('phoneError', 'phone', error);
+        return false;
     }
     else
     {
-        
+        document.getElementById('phoneError').innerText = "";
+        document.getElementById('phone').style.borderColor = "green";
+        return true;
     }
+
 }
+
+function buttonAble()
+{
+
+    submitButton.disabled = !(PhoneCheck() && checkFIO() && MailCheck());
+} 
