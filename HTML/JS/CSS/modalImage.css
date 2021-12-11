@@ -1,5 +1,6 @@
 
 #myImg {
+  opacity: 0.3;
   border-radius: 5px;
   cursor: pointer;
   transition: 0.3s;
@@ -24,7 +25,7 @@
 
 /* Modal Content (image) */
 .modal-content {
-  margin: auto;
+  margin: auto;   
   display: block;
   width: 80%;
   max-width: 700px;

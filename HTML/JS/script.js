@@ -11,9 +11,6 @@ function imageFunc()
  
     const imageOut = document.querySelector('.image-out');
 
-
-
-
     for (let key in images)
     {
 

@@ -1,3 +1,15 @@
+#calendar{
+    float: right;
+    font-size: 20 px;
+    padding: 14px 16px;
+    color:rgb(243, 210, 23);
+    border-radius: 10px;
+    background-color: #000000;
+}
+
+
+
+
 .navbar {
   overflow: hidden;
   background-color: #333;
