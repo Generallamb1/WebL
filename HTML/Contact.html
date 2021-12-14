@@ -7,23 +7,34 @@
 
     <style>
 
-        #phone{
+        .radiobtn{
+            height: 20px;
             margin-left: 10px;
+            text-align: right;
         }
         
-        #phoneError, #nameError, #mailError{
-            margin-left: 10px;
-            font-size: 14;
-            float: left;
-            color: rgb(255, 31, 15);
+        label {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            text-align: right;
+            width: 400px;
+            line-height: 26px;
+            margin-bottom: 10px;
         }
 
+        input {
+            border-radius: 7px;
+            height: 20px;
+            flex: 0 0 200px;
+            margin-left: 10px;
+        }
 
-        .invalid {border-color: red;}
     </style>
 
     <meta charset="utf-8">
     <title>Контакт</title>
+
 </head>
 
 
@@ -48,45 +59,46 @@
 
     <form name="contact" method="post" >
 
-        <p>
-            <b>Ваше имя:</b><br>
-            <input class = "name"  id = "contact"  type="text" name="name" size="40">
-            <p id="nameError"></p>
-        </p>
-        <p>
-            <b>Пол:</b><Br>
-            <input type="radio" name="sex" value="Male"> Male
-            <input type="radio" name="sex" value="Female"> Female<Br>
-            <input type="radio" name="sex" value="SonicTheHedgehog">SonicTheHedgehog<Br>
-        </p>
+        <label>
+            <b>Ваше имя:</b>    
+            <input class="input-field" id="contact" type="text" name="name" size="40"/>
+        </label>
+        
+        <label>
+        <div class="radiobutn">
+            <b>Пол:</b>
+            <input type="radio" name="sex" value="Male"/> Male
+            <input type="radio" name="sex"value="Female"/> Female
+            <input type="radio" name="sex" value="SonicTheHedgehog"/>SonicTheHedgehog
+        </div>  
+        </label>
 
-        <p>
-            <b>Возраст:<b><Br>
-            <select name="age">
-                <option value="18">18</option>
-                <option value="19">19</option>
-                <option value="20">20</option>
-                <option value="21">21</option>
-                <option value="22">22</option>
+        <label>
+            <b>Возраст:<b>  
+                <select name="age">
+                    <option value="18">18</option>
+                    <option value="19">19</option>
+                    <option value="20">20</option>
+                    <option value="21">21</option>
+                    <option value="22">22</option>
             </select>
-        </p>
+        </label>
 
-        <p>
-            <b>Телефон:</b><Br>
-            <input id="phone" type="text" name="phone" size="13">
-            <p id="phoneError"></p>
-        </p>
+        <label>
+            <b>Телефон:</b><input class="input-field" id="phone" type="text" name="phone" size="40"/>
+        </label>
 
-        <p>
-            Пошта:<Br>
-            <input id = "mail" type="text" name="mail" size="40">
-            <p id ="mailError"></p>
-        </p>
+        
 
-        <p>
+        <label>
+            Пошта:<input class="inp  ut-field" id = "mail" type="text" name="mail" size="40"/>
+        </label>    
+        
+
+        <label>
             <input id = "subm" type="button" value="Отправить">
             <input type="reset" value="Стереть">
-        </p>        
+        </label>
 
     </form>
 

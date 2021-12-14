@@ -26,7 +26,7 @@ fioField.addEventListener('change', buttonAble);
 
 function alertAndFocus(errorField, element, errorText)
 {
-    document.getElementById(errorField).innerText = errorText;
+    errorField.setCustomValidity(errorText)
     document.getElementById(element).focus();
     document.getElementById(element).style.borderColor = "red";
 }
@@ -46,29 +46,28 @@ function MailCheck()
 {
     error = "";
 
-    error = checkEmptyField('mail', 'mailError');
+    error = checkEmptyField('mail', mailField);
 
     if (error)
     {
-        alertAndFocus('mailError', 'mail', error);
+        alertAndFocus(mailField, 'mail', error);
         return false;
     }
     else
     {
-        document.getElementById('mailError').innerText = "";
-        document.getElementById('mail').style.borderColor = "green";
+        mailField.setCustomValidity("");
+        mailField.style.borderColor = "green";
         return true;
     }
 }
 
-
 function checkFIO()
-{
+{   
     var error = "";
     var string = document.getElementById('contact').value;
     var counter = 0;
-
-    error = checkEmptyField('contact', 'nameError');
+    
+    error = checkEmptyField('contact', fioField);
 
     for (let i = 0; i < string.length; i++)
     {
@@ -86,12 +85,12 @@ function checkFIO()
     
     if (error)
     {
-        alertAndFocus('nameError', 'contact', error);
+        alertAndFocus(fioField, 'contact', error);
         return false;
-    } else
+    } else  
     {
-        document.getElementById('nameError').innerText = "";
-        document.getElementById('contact').style.borderColor = "green";     
+        fioField.setCustomValidity("");
+        fioField.style.borderColor = "green";     
         return true;
     }
 }
@@ -102,7 +101,7 @@ function PhoneCheck()
 
     var string = document.getElementById('phone').value;
 
-    error = checkEmptyField('phone', 'phoneError');
+    error = checkEmptyField('phone', phoneField);
 
     if (string.match(/^[0-9+]+$/) == null)
     {
@@ -126,13 +125,13 @@ function PhoneCheck()
 
     if (error)
     {
-        alertAndFocus('phoneError', 'phone', error);
+        alertAndFocus(phoneField, 'phone', error);
         return false;
     }
     else
     {
-        document.getElementById('phoneError').innerText = "";
-        document.getElementById('phone').style.borderColor = "green";
+        phoneField.setCustomValidity("");
+        phoneField.style.borderColor = "green";
         return true;
     }
 
